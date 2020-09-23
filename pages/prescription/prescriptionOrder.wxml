@@ -1,0 +1,45 @@
+<!--pages/prescription/prescriptionOrder.wxml-->
+<view class="page">
+    <view class="page_body {{!inputShowed?'body_show':'body_hide'}}">
+      <block wx:if="{{selectedList.length != 0}}">
+        <view class="prescription_list">
+          <view class="tital">处方列表</view>
+          <block wx:for="{{selectedList}}" wx:key="index">
+            <view class="table_row">
+              <view class="rownum">
+                <text>{{index + 1}}</text>
+              </view>
+              <view class="detail">
+                <view class="detail_item name">
+                  <text>{{item.medicinalName}}</text>
+                </view>
+                <view class="detail_item usage">
+                  <label>用法用量:</label>
+                  <text>{{item.usage}}</text>
+                </view>
+                <view class="detail_item usage">
+                  <label>销售价格:</label>
+                  <text>￥{{item.medicinalSalesPrice}}</text>
+                </view>
+              </view>
+              <view class="num">
+                <!-- 减号 -->  
+                <image src="../../images/reduce-icon.svg" class="operator" data-index="{{index}}" bindtap="bindMinusWithOrder" />
+                <text>{{item.num}}</text>
+                <!-- 加号 -->  
+                <image src="../../images/add-icon.svg" class="operator" data-index="{{index}}" bindtap="bindPlusWithOrder" />
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="none_data">暂无添加药品</view>
+      </block>
+      <view class="btn-view"><view class='btn' bindtap="ok">确定</view></view>
+    </view>
+</view>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<mp-dialog title="提示" show="{{msgDialogShow}}" bindbuttontap="msgDialogButton" buttons="{{msgButtons}}">
+  <text class="msg">{{msgText}}</text>
+</mp-dialog>

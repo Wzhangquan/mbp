@@ -1,0 +1,40 @@
+<!--pages/mine/mine.wxml-->
+<view class="header">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<view class="detail">
+  <view class="cell weui-cells weui-cells_after-title" bindtap="myDetail">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <mp-icon icon="contacts" color="#333" /><text>个人信息</text>
+      </view>
+    </view>
+  </view>
+  <view class="cell weui-cells weui-cells_after-title" bindtap="myQr">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <mp-icon icon="qr-code" color="#333" /><text>我的二维码</text>
+      </view>
+    </view>
+  </view>
+  <view class="cell weui-cells weui-cells_after-title" bindtap="myInquiry">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <mp-icon icon="group-detail" color="#333" /><text>我的患者</text>
+      </view>
+    </view>
+  </view>
+  <view class="cell weui-cells weui-cells_after-title" bindtap="myPrescription">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd weui-cell__bd_in-select-before">
+        <mp-icon icon="note" color="#333" /><text>我的处方</text>
+      </view>
+    </view>
+  </view>
+</view>

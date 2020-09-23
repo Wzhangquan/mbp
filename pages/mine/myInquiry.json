@@ -1,0 +1,5 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "我的患者",
+  "enablePullDownRefresh":true
+}

@@ -1,0 +1,32 @@
+/* pages/mine/mine.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 220rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #888;
+}
+
+page{
+  background-color: #eee;
+}
+.weui-icon{
+  margin-top: -4rpx;
+}
+.cell{
+  border: 0;
+  padding: 20rpx 10rpx;
+  margin: 5rpx auto;
+}
+.cell text{
+  color: #333;
+  margin-left: 20rpx;
+}

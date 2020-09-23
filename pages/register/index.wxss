@@ -1,0 +1,133 @@
+/* pages/yuyue/index.wxss */
+.app .header{
+  width: 100%;
+  height: 200rpx;
+}
+
+.content {
+  width: 94%;
+  height: auto;
+  padding: 0 3%;
+  background: #fff;
+}
+
+.title {
+  height: 80rpx;
+  padding: 0 3%;
+  line-height: 80rpx;
+  background-color: #eee;
+}
+
+.content .item {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx #f5f5f5 solid;
+  font-size: 28rpx;
+  color: #444;
+}
+
+.content .item .hint {
+  width: 180rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  float: left;
+  color: #666;
+}
+
+.content .item input, .content .item .date {
+  width: 500rpx;
+  height: 100rpx;
+  padding: 0 4rpx;
+  line-height: 100rpx;
+  float: left;
+}
+
+.picker {
+  display: inline-block;
+  height: 100rpx;
+  width: 480rpx;
+  line-height: 100rpx;
+  padding: 0 4rpx;
+}
+
+.textarea{
+  width: 480rpx;
+  height: 220rpx;
+  padding: 8rpx 4rpx 0 4rpx;
+}
+
+.view_container {
+  height: auto;
+  width: 100%;
+  margin: 45rpx auto;
+}
+
+.btn_container {
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  margin: auto;
+}
+
+.btn {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+/* 同意 */
+.agree {
+  display: block;
+  padding: .5em 15px;
+  font-size: 13px;
+}
+
+.agree__text {
+  color: rgba(0,0,0,.5);
+}
+
+.checkbox {
+  position: absolute;
+  left: -9999px;
+}  
+  
+.checkbox-icon {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 11px;
+  height: 11px;
+}
+
+.checkbox-icon-check {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+  
+.link {
+  display: inline;
+  color: #576b95;
+}
+
+.diseases{
+  width: 240rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  padding: 0;
+  border: 1rpx solid #dcdcdc;
+  background: #fff;
+  border-radius: .3rem;
+  margin: 10rpx 10rpx;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.diseases-selected{
+  border: 1rpx solid #06a380;
+}

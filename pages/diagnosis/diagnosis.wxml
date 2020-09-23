@@ -1,0 +1,102 @@
+<view class='chat' id="chat" style="min-height:{{height}}px; padding-bottom:{{showIcon?366:116}}rpx; background-color:#EFF0F3" bindtap="bindChatClick">
+<!-- <view class='chat' id="chat" style="min-height:{{height}}px; padding-bottom:116rpx; background-color:#EFF0F3" bindtap="bindChatClick"> -->
+<!-- <view class='chat' id="chat" style="min-height:{{height}}px; background-color:#EFF0F3" bindtap="bindChatClick"> -->
+  <view class="more"><text class="more_text">{{more_text}}</text></view>
+  <block wx:for="{{myMessages}}" wx:key="index" >
+    <!-- 自定义消息 -->
+    <view class="chat_box" wx:if="{{item.type == 'TIMCustomElem'}}">
+      <view class="chat-item" wx:if="{{item.flow == 'in'}}" data-type="{{item.payload.data.type}}" data-id="{{item.payload.data.id}}" bindtap="house_detail">
+        <image class='avatar' style="margin-right: 19rpx;" mode= "scaleToFill" src="{{friendAvatarUrl ? friendAvatarUrl : '/images/avatar.png'}}"></image>
+        <view class="custom_box">
+          <image src="{{item.payload.data.house_pic}}" class="pic"></image>
+          <view class="des_box">
+            <view class="title">{{item.payload.data.title}}</view>
+            <view class="des">
+              <view>{{item.payload.data.area}}m²</view>
+              <view style="padding:0 8rpx">|</view>
+              <view class="park_name">{{item.payload.data.city}}·{{item.payload.data.park}}</view>
+            </view>
+            <view class="price">￥{{item.payload.data.price}}元/m²·月</view>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="chat-item flex-wrap" data-type="{{item.payload.data.type}}" data-id="{{item.payload.data.id}}" bindtap="house_detail">
+        <view class='avatar' style="margin-left: 19rpx" wx:if="{{item.flow == 'out'}}">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="custom_box">
+          <image src="{{item.payload.data.house_pic}}" class="pic"></image>
+          <view class="des_box">
+            <view class="title">{{item.payload.data.title}}</view>
+            <view class="des">
+              <view>{{item.payload.data.area}}m²</view>
+              <view style="padding:0 8rpx">|</view>
+              <view class="park_name">{{item.payload.data.city}}·{{item.payload.data.park}}</view>
+            </view>
+            <view class="price">￥{{item.payload.data.price}}元/m²·月</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="chat_box" wx:if="{{item.type != 'TIMCustomElem'}}">
+      <view class="chat-item {{item.flow == 'in' ? '' : 'flex-wrap'}}">
+        <image wx:if="{{item.flow == 'in'}}" class='avatar' style="margin-right: 19rpx;" mode= "scaleToFill" src="{{friendAvatarUrl ? friendAvatarUrl : '/images/avatar.png'}}"></image>
+        <view class='avatar' style="margin-left: 19rpx" wx:else>
+          <open-data  type="userAvatarUrl"></open-data>
+        </view>
+        <block wx:if="{{item.type === 'TIMTextElem'}}">
+          <view class='content'>
+            {{item.payload.text}}
+          </view>
+        </block>
+        <block wx:if="{{item.type === 'TIMImageElem'}}">
+          <image class="img" bindtap="previewImage" src="{{item.payload.imageInfoArray[0].imageUrl}}" mode="aspectFit" data-src="{{item.payload.imageInfoArray[0].imageUrl}}" style="height:{{(item.payload.imageInfoArray[0].height/item.payload.imageInfoArray[0].width)*410}}rpx;"/>
+        </block>
+        <view wx:if="{{item.flow != 'in'}}" class="read">{{item.isPeerRead? '已读': '未读'}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="chat-footer" style="padding-bottom: calc({{tabBottom}}px + 25rpx)">
+  <view class="sendBox">
+    <view class='input' bindtap="focusText">
+      <textarea class="inputArea" fixed="true" cursor-spacing="25" disable-default-padding="true" bindinput="input" bindfocus="focus" bindblur="blur" value="{{inputVal}}" placeholder="" show-confirm-bar="{{false}}" focus="{{focus}}"/>
+    </view>
+    <block wx:if="{{sendShow}}">
+      <view class='send' bindtap='bindConfirm'>发送</view>
+    </block>
+    <block wx:else>
+      <image bindtap="showIcon" class="icon" src="../../images/add2-icon.svg" />
+    </block>
+  </view>
+<!-- 点击加号，显示下面的功能 -->
+  <block wx:if="{{showIcon}}">
+  <view class="more_mode">
+    <view class="mode">
+      <view class="mode_icon_box" bindtap="sendImageMessage">
+        <image class="mode_icon" src="../../images/img-icon.svg" />
+      </view>
+      <text>照片</text>
+    </view>
+    <view class="mode">
+      <view class="mode_icon_box" bindtap="">
+        <image class="mode_icon" src="../../images/video-icon.svg" />
+      </view>
+      <text>视频</text>
+    </view>
+    <view class="mode">
+      <view class="mode_icon_box" bindtap="goPrescription">
+        <image class="mode_icon" src="../../images/prescription-icon.svg" />
+      </view>
+      <text>开处方</text>
+    </view>
+    <view class="mode">
+      <view class="mode_icon_box" bindtap="overDiagnosis">
+        <image class="mode_icon" src="../../images/over-icon.svg" />
+      </view>
+      <text>结束诊断</text>
+    </view>
+  </view>
+  </block>
+</view>
+<view class="detail" bindtap="toDetail">病情</view>

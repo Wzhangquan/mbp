@@ -1,0 +1,45 @@
+/* pages/mine/myDetail.wxss */
+page{
+  background-color: #eee;
+}
+.body{
+  width: 92%;
+  padding: 10rpx;
+  margin: 20rpx auto;
+  border-radius: .5rem;
+  background-color: #fff;
+}
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-top: 12rpx;
+}
+.body .item{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+.body .item label{
+  width: 30%;
+  color: #333;
+  font-size: 30rpx;
+}
+.body .item .detail{
+  float: right;
+  text-align: right;
+  width: 65%;
+  word-break: break-all;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.body .item .arrow{
+  display: inline-block;
+  width: 5%;
+  color: #aaa;
+  text-align: center;
+  font-size: 28rpx;
+}

@@ -1,0 +1,46 @@
+<!--pages/mine/myPrescription.wxml-->
+<block wx:if="{{myPrescriptionList != null && myPrescriptionList.length > 0}}">
+<block wx:for="{{myPrescriptionList}}" wx:for-item="inquiryInfor" wx:key="index">
+<view class="pre">
+  <view class="header">
+    <view class="header_item">
+      <image class="userinfo-avatar" src="{{inquiryInfor.weixinHeadUrl}}" mode="cover" />
+      <text>{{inquiryInfor.currentPatientName}}</text>
+    </view>
+    <view class="item">
+      <label>处方生成时间:</label>
+      <text>{{inquiryInfor.createDatetime}}</text>
+    </view>
+    <view class="item">
+      <label>确诊疾病:</label>
+      <text>{{inquiryInfor.diseasesName}}</text>
+    </view>
+    <view class="item">
+      <label>病情描述:</label>
+      <text>{{inquiryInfor.diseasesDescription}}</text>
+    </view>
+  </view>
+  <view class="body">
+    <block wx:for="{{inquiryInfor.prescriptionDetailInfoList}}" wx:key="index">
+      <view class="table_row">
+        <view class="body_item name">
+          <label>药品名称:</label>
+          <text>{{item.medicinalName}}</text>
+        </view>
+        <view class="body_item num">
+          <label>数量:</label>
+          <text>{{item.medicinalQuatity}}</text>
+        </view>
+        <view class="body_item usage">
+          <label>用法用量:</label>
+          <text>{{item.dosageDetail==null?'':item.dosageDetail}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+</block>
+</block>
+<block wx:else>
+  <view class="none_data">暂无处方</view>
+</block>

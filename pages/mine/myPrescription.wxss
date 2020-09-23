@@ -1,0 +1,76 @@
+/* pages/mine/myPrescription.wxss */
+page{
+  background-color: #eee;
+}
+.pre{
+  background-color: #fff;
+  width: 700rpx;
+  border-radius: .5rem;
+  margin: 20rpx auto;
+  padding: 20rpx 10rpx;
+}
+.pre .header{
+  border-bottom: 1rpx solid #ddd;
+  padding: 0 5rpx 20rpx;
+}
+.pre .header .header_item .userinfo-avatar{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.pre .header .header_item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+}
+.pre .header .header_item text{
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.pre .header .item{
+  font-size: 24rpx;
+  color: #444;
+  padding: 0 20rpx;
+}
+.pre .header .item label{
+  color: #777;
+  width: 170rpx;
+  display: inline-block;
+}
+.pre .header .item text{
+  width: 470rpx;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+.pre .body{
+  padding: 0 10rpx;
+  font-size: 24rpx;
+  color: #888;
+}
+.pre .body .table_row{
+  margin-top: 30rpx;
+}
+.pre .body .table_row .body_item{
+  height: 40rpx;
+}
+.pre .body .table_row .body_item label{
+  float: left;
+}
+.pre .body .table_row .body_item text{
+  float: right;
+  text-align: right;
+  width: 550rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.none_data{
+  width: 50%;
+  margin: 200rpx auto;
+  text-align: center;
+  color: #888;
+}

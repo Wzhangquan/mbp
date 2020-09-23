@@ -1,0 +1,14 @@
+<!--pages/diagnosis/patientDetail.wxml-->
+<view class="header">
+  <image bindtap="bindViewTap" class="userinfo-avatar" src="{{medicinalRecordInfo.weixinHeadUrl}}" mode="cover" />
+  <view class="header_detail">
+    <view><label>就诊人:</label><text>{{medicinalRecordInfo.currentPatientName}}</text></view>
+    <view><label>确诊疾病:</label><text>{{medicinalRecordInfo.diseasesName}}</text></view>
+  </view>
+</view>
+<view class="body"><label>病情描述:</label><text>{{medicinalRecordInfo.diseasesDescription}}</text></view>
+<view class="imgs">
+  <block wx:for="{{imgUrls}}" wx:key="index">
+    <image class="img" mode="aspectFill" bindtap="bindPreviewImage" data-src="{{item}}" src="{{item}}" />
+  </block>
+</view>

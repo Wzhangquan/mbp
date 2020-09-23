@@ -1,0 +1,37 @@
+<!--pages/inquiry/inquiry.wxml-->
+<view class='app'>
+  <image class="header" src='/images/icon_yuyue_header.jpg'></image>
+</view>
+<block wx:if="{{list.length > 0}}">
+<block wx:for="{{list}}" wx:key="index">
+  <view class="content" data-id="{{item.id}}" data-diagnoseflag="{{item.diagnoseFlag}}" data-version="{{item.modifyTimestamp}}" data-index="{{index}}" bindtap="goDiagnosis">
+    <view class="rownum">
+      <image class='avatar' src="{{item.weixinHeadUrl}}" />
+    </view>
+    <view class="detail">
+      <view class="item">
+        <label>就诊人:</label>
+        <text>{{item.currentPatientName}}</text>
+      </view>
+      <view class="item">
+        <label>确诊疾病:</label>
+        <text>{{item.diseasesName}}</text>
+      </view>
+      <view class="item">
+        <label>病情描述:</label>
+        <text>{{item.diseasesDescription}}</text>
+      </view>
+    </view>
+    <view class="status {{item.statusClass}}">
+      <text>{{item.diagnoseFlagNm}}</text>
+    </view>
+    <view class="arrow">
+      >
+    </view>
+    <view class="unread" wx:if="{{item.unreadCount > 0}}">{{item.unreadCount > 99? '99+': item.unreadCount}}</view>
+  </view>
+</block>
+</block>
+<block wx:else>
+<view class="none_data">暂无问诊人</view>
+</block>

@@ -1,0 +1,35 @@
+<!--pages/mine/myInquiry.wxml-->
+<block wx:if="{{list != null && list.length > 0}}">
+<block wx:for="{{list}}" wx:key="index">
+  <view class="content" data-id="{{item.id}}" bindtap="goDiagnosis">
+    <view class="heard">
+      <image class="userinfo-avatar" src="{{item.weixinHeadUrl}}" mode="cover" />
+    </view>
+    <view class="detail">
+      <view class="item">
+        <label>患者:</label>
+        <text>{{item.currentPatientName}}</text>
+      </view>
+      <view class="item">
+        <label>最近确诊疾病:</label>
+        <text>{{item.diseasesName}}</text>
+      </view>
+      <view class="item">
+        <label>最近病情描述:</label>
+        <text>{{item.diseasesDescription}}</text>
+      </view>
+      <view class="item" hidden="true">
+        <label hidden="true">>最近留言:</label>
+        <text hidden="true">>{{item.remarks}}</text>
+      </view>
+      <view class="item">
+        <label>最近诊断日期:</label>
+        <text>{{item.createDatetime}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+</block>
+<block wx:else>
+  <view class="none_data">暂无患者</view>
+</block>

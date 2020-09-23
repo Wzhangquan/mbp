@@ -1,0 +1,44 @@
+<!--pages/noticeText/noticeText.wxml-->
+<view class="textContent">
+	<view class="headText">
+		<text >互联网诊疗风险告知及知情同意书</text>
+	</view>
+
+	<view class="titleText">
+		<text >互联网诊疗服务规范及风险告知</text>
+	</view>
+
+	<view class="detilText">
+		<text decode="{{true}}" >&nbsp;&nbsp;&nbsp;&nbsp;根据《互联网诊疗管理办法(试行)》、《互联网医院管理办法(试行)》、《远程医疗服务管理办法(试行)》等法规的要求，患者应知晓互联网诊疗相关的执业规则并接受风险告知和签署知情同意书。</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网诊疗开晨部分常见病、慢性病复诊和“互联网+"家庭医生签约服务。互联网医院开晨部分常见病、慢性病复诊时，医师应当掌握患者病历资料，确定已有明确诊断后，针对相同诊断进行复诊并开具处方。互联网医院可以提供家庭医生签约服务，可以委托第符合条件的第三方机构配送药品，可以开展远程医疗服务。</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网医院不能开具麻醉药品、精神类药品处方，以及其他用药风险较高，有其他特殊管理规定的药品处方。为6岁以下的儿童开具用药处方时应当有监护人和相关专业医师陪伴。</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网医院可以提供药品配送相关的服务，但实际服务提供方为合作第三方。相关的服务质量和售后保障由第三方负责。当发生不良事件时，患者应积极上报。</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网医院可以患者提供“互联网+家庭医生签约服务或远程医疗服务。患者应遵守相关的服务流程和约定。患者应妥善保管信息，不得非法买卖和泄露信息，并在发现信息泄露时，积极上报</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网诊疗、家庭医生签约、远程医疗服务潜在风险告知及对策。</text>
+  </view>
+
+	<view class="titleText">
+		<text >互联网诊疗服务规范及风险告知</text>
+	</view>
+
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网医院可以提供药品配送相关的服务，但实际服务提供方为合作第三方。相关的服务质量和售后保障由第三方负责。当发生不良事件时，患者应积极上报。</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网医院可以患者提供“互联网+家庭医生签约服务或远程医疗服务。患者应遵守相关的服务流程和约定。患者应妥善保管信息，不得非法买卖和泄露信息，并在发现信息泄露时，积极上报</text>
+	</view>
+	<view class="detilText">
+		<text decode="{{true}}" class="detilText">&nbsp;&nbsp;&nbsp;&nbsp;互联网诊疗、家庭医生签约、远程医疗服务潜在风险告知及对策。</text>
+  </view>
+
+</view>

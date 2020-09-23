@@ -1,0 +1,21 @@
+<!--pages/mine/myDetail.wxml-->
+<view class="body">
+  <view class="item">
+    <label>头像</label>
+    <view class="detail">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </view>
+    <text class="arrow"></text>
+  </view>
+  <view class="item"><label>姓名</label><text class="detail">{{userDetail.doctorName}}</text><text class="arrow"></text></view>
+  <view class="item"><label>身份证号码</label><text class="detail">{{userDetail.identificationCard}}</text><text class="arrow"></text></view>
+  <view class="item"><label>手机号码</label><text class="detail">{{userDetail.mobile}}</text><text class="arrow"></text></view>
+  <view class="item"><label>住址</label><text class="detail">{{userDetail.provinceName}}{{userDetail.cityName}}{{userDetail.areaName}}{{userDetail.pharmacyAddress}}</text><text class="arrow">></text></view>
+  <view class="item"><label>供职医院</label><text class="detail">{{userDetail.hospitalName}}</text><text class="arrow">></text></view>
+  <view class="item"><label>科室</label><text class="detail">{{userDetail.hospitalDepName}}</text><text class="arrow">></text></view>
+  <view class="item"><label>主治疾病</label><text class="detail">{{userDetail.diseases}}</text><text class="arrow">></text></view>
+  <view class="item"><label>级别</label><text class="detail">{{userDetail.doctorLevelName}}</text><text class="arrow">></text></view>
+  <view class="item"><label>个人擅长</label><text class="detail">{{userDetail.personalSpecialty}}</text><text class="arrow">></text></view>
+  <view class="item"><label>个人介绍</label><text class="detail">{{userDetail.personalIntroduction}}</text><text class="arrow">></text></view>
+  <!-- <view class="item"><label>相关证件</label><text class="detail">{{userDetail.doctorDocFileId}}</text><text class="arrow">></text></view> -->
+</view>

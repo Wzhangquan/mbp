@@ -1,0 +1,5 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "我的处方",
+  "enablePullDownRefresh":true
+}

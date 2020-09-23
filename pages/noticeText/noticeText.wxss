@@ -1,0 +1,23 @@
+/* pages/noticeText/noticeText.wxss */
+.textContent{
+  margin:30rpx 20rpx 20rpx 20rpx;
+}
+.headText{
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.titleText{
+  width: 100%;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.detilText{
+  font-size: 35rpx;
+  color: #9195A3;
+}

@@ -1,0 +1,52 @@
+/* pages/mine/myInquiry.wxss */
+page{
+  background-color: #eee;
+}
+.content{
+  width: 700rpx;
+  margin: 20rpx auto;
+  border: 1rpx solid #eee;
+  border-radius: .5rem;
+  padding: 20rpx 5rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.content view{
+  display: inline-block;
+}
+.heard{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 20rpx;
+}
+.heard .userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.detail{
+  width: 560rpx;
+  font-size: 26rpx;
+}
+.detail .item{
+  display: block;
+}
+.detail .item label{
+  width: 170rpx;
+  float: left;
+  color: #777;
+}
+.detail .item text{
+  width: 380rpx;
+  float: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.none_data{
+  width: 50%;
+  margin: 200rpx auto;
+  text-align: center;
+  color: #888;
+}

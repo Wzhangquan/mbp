@@ -1,0 +1,144 @@
+<!--pages/register/index.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class='app'>
+
+  <image class="header" src='/images/icon_yuyue_header.jpg'></image>
+
+  <view class='title'>注册通道</view>
+
+  <form bindsubmit='register'>
+    <view class='content'>
+      <view class='item'>
+        <text class='hint'>姓名<text style="color:red">*</text></text>
+        <input name="doctorName" placeholder='姓名'></input>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>性别<text style="color:red">*</text></text>
+        <picker bindchange="bindSexChange" value="{{sex}}" range="{{sexList}}">
+          <view class="picker">
+            <block wx:if="{{sex == null}}">
+              <text style="color: #888;">请选择</text>
+            </block>
+            <block wx:else>
+              {{sexList[sex]}}
+            </block>
+          </view>
+        </picker>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>身份证号码<text style="color:red">*</text></text>
+        <input bindblur="blurIdentificationCard" name="identificationCard" placeholder='身份证号码' maxlength="18"></input>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>手机号码<text style="color:red">*</text></text>
+        <input type='number' bindblur="blurMobile" name="mobile" placeholder='手机号码' maxlength="11"></input>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>省/市/区</text>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="picker">
+            <block wx:if="{{region[0] == ' '}}">
+              <text style="color: #888;">请选择</text>
+            </block>
+            <block wx:else>
+              {{region[0]}} {{region[1]}} {{region[2]}}
+            </block>
+          </view>
+        </picker>
+      </view>
+
+      <view class='item' style="height: 230rpx;">
+        <text class='hint' style="line-height: 50rpx;">详细住址</text>
+        <textarea class="textarea" name="pharmacyAddress" placeholder='详细住址'></textarea>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>供职医院<text style="color:red">*</text></text>
+        <input name="hospitalName" placeholder='供职医院'></input>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>科室<text style="color:red">*</text></text>
+        <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{departmentList}}">
+          <view class="picker">
+            <block wx:if="{{departmentIndex == null}}">
+              <text style="color: #888;">请选择</text>
+            </block>
+            <block wx:else>
+              {{departmentList[departmentIndex]}}
+            </block>
+          </view>
+        </picker>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>主治疾病<text style="color:red">*</text></text>
+        <block wx:if="{{selectedDiseasesList.length == 0}}">
+          <text style="color: #888;display:inline-block;width:480rpx;height:100rpx;line-height:100rpx;padding:0 4rpx" bindtap="openConfirm">请选择</text>
+        </block>
+        <block wx:else>
+          <view style="display:flex;width:480rpx;height:100rpx;padding:0 4rpx;align-items:center;" bindtap="openConfirm">
+            {{selectedDiseasesText}}
+          </view>
+        </block>
+      </view>
+
+      <view class='item'>
+        <text class='hint'>级别<text style="color:red">*</text></text>
+        <picker bindchange="bindDoctorLevelChange" value="{{doctorLevelIndex}}" range="{{doctorLevelList}}">
+          <view class="picker">
+            <block wx:if="{{doctorLevelIndex == null}}">
+              <text style="color: #888;">请选择</text>
+            </block>
+            <block wx:else>
+              {{doctorLevelList[doctorLevelIndex]}}
+            </block>
+          </view>
+        </picker>
+      </view>
+
+      <view class='item' style="height: 230rpx;">
+        <text class='hint' style="line-height: 50rpx;">个人擅长</text>
+        <textarea class="textarea" name="personalSpecialty" placeholder='个人擅长'></textarea>
+      </view>
+
+      <view class='item' style="height: 230rpx;">
+        <text class='hint' style="line-height: 50rpx;">个人介绍</text>
+        <textarea class="textarea" name="personalIntroduction" placeholder='个人介绍'></textarea>
+      </view>
+
+      <!-- <view class='item'>
+        <text class='hint'>相关证书</text>
+        <input name="certificate" placeholder='相关证书'></input>
+      </view> -->
+    </view>
+
+    <view class='view_container'>
+      <checkbox-group bindchange="bindAgreeChange">
+        <label class="agree" for="weuiAgree">
+          <view class="agree__text">
+            <checkbox class="checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+            <view class="checkbox-icon">
+              <icon class="checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+            </view>
+            我已阅读并同意<navigator url="/pages/noticeText/noticeText" class="link">《知情同意书》</navigator>
+          </view>
+        </label>
+      </checkbox-group>
+      <view class='btn_container'>
+        <button class='btn' form-type='submit' style='background: #01AAED'>提交</button>
+      </view>
+    </view>
+  </form>
+</view>
+<mp-dialog title="主治疾病" show="{{dialogShow}}" mask-closable="{{false}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+  <view class="comment-btn">
+    <view wx:for="{{diseasesList}}" wx:for-item="item" wx:key="index" bindtap="checkboxChange" data-value="{{item.value}}" data-index="{{index}}" checked="{{item.selected}}" class="diseases {{item.selected ? 'diseases-selected' : ''}}" >
+      {{item.title}}
+    </view>
+  </view>
+</mp-dialog>

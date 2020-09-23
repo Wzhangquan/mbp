@@ -1,0 +1,175 @@
+/* pages/prescription/prescriptionOrder.wxss */
+page{
+  background-color: #eee;
+}
+.body_show{
+  display: block;
+}
+.body_hide{
+  display: none;
+}
+.item{
+  width: 94%;
+  font-size: 90%;
+  display: inline-block;
+}
+.item label{
+  width: 30%;
+  float: left;
+}
+.item text ,.item .stepper{
+  width: 68%;
+  float: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+.item .stepper{
+  position: relative;
+}
+.item .stepper .operator{
+  width: 10%;
+  display: inline-block;
+}
+.item .stepper .add{
+  position: absolute;
+  left: 90%;
+  top: -520%;
+}
+.item .stepper .number{
+  width: 30%;
+  text-align: center;
+  margin-right: 10%;
+  display: inline-block;
+}
+.item .stepper .reduce{
+  position: absolute;
+  left: 50%;
+  top: -520%;
+}
+.item input{
+  width: 68%;
+  display: inline-block;
+  text-align: right;
+  float: right;
+}
+
+
+/* --------------按钮样式-------------- */
+.btn-view {
+  width: 100%;
+  padding: 20rpx 0;
+  position: fixed;
+  bottom: 0;
+  background-color: #eee;
+}
+.btn {
+  width: 90%;
+  height: 74rpx;
+  line-height: 74rpx;
+  background-color: #01AAED;
+  color: #fff;
+  border-radius: .3rem;
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* --------------表格样式-------------- */
+.prescription_list{
+  width: 96%;
+  background-color: #fff;
+  border-radius: .5rem;
+  margin: 25rpx auto;
+}
+.prescription_list .tital{
+  font-size: 24rpx;
+  color: #444;
+  text-align: left;
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.prescription_list .table_row{
+  width: 98%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 15rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.prescription_list .table_row view{
+  display: inline-block;
+}
+.prescription_list .table_row .rownum{
+  width: 10%;
+}
+.prescription_list .table_row .rownum text{
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #01AAED;
+  border-radius: 100%;
+  background-color: #01AAED;
+  color: #ffffff;
+  display: inline-block;
+  text-align: center;
+  font-size: 28rpx;
+}
+.prescription_list .table_row .detail{
+  width: 70%;
+  font-size: 28rpx;
+}
+.prescription_list .table_row .detail .detail_item{
+  display: block;
+}
+.prescription_list .table_row .detail .detail_item label{
+  width: 25%;
+  float: left;
+}
+.prescription_list .table_row .detail .detail_item text{
+  width: 72%;
+  padding: 0 1%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.prescription_list .table_row .detail .name{
+  font-size: 34rpx;
+  font-weight: 500;
+}
+.prescription_list .table_row .detail .usage{
+  font-size: 26rpx;
+  color: #666;
+  margin-left: 5rpx;
+}
+.prescription_list .table_row .num{
+  width: 20%;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+.prescription_list .table_row .num .operator{
+  width: 32rpx;
+  height: 32rpx;
+}
+.prescription_list .table_row .num text{
+  width: 70rpx;
+  display: inline-block;
+}
+
+/* 暂无药品样式 */
+.none_data{
+  width: 50%;
+  margin: 200rpx auto;
+  text-align: center;
+  color: #888;
+}
+
+/* 药店 */
+.drugstore{
+  background-color: #fff;
+  padding: 15rpx;
+}

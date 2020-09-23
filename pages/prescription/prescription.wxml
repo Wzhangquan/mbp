@@ -1,0 +1,76 @@
+<!--pages/prescription/prescription.wxml-->
+<view class="page">
+    <!-- 搜索框 -->
+    <view class="page__bd">
+        <mp-searchbar id="searchbar" bindselectresult="selectResult" search="{{search}}" throttle="300" placeholder="搜索药品" bindfocus="searchFocus" bindblur="searchBlur"></mp-searchbar>
+    </view>
+    <view class="page_body {{!inputShowed?'body_show':'body_hide'}}" style="padding-bottom: 110rpx">
+      <view class="drugstore"><mp-icon icon="location" color="black" />{{medicinalRecordInfo.pharmacyName}}</view>
+      <block wx:if="{{medicinalInfoList.length != 0}}">
+        <view class="prescription_list">
+          <view class="tital">药品表</view>
+          <block wx:for="{{medicinalInfoList}}" wx:key="index">
+            <view class="table_row" data-code="{{item.medicinalCode}}" data-index="{{index}}" bindtap="openConfirm">
+              <view class="rownum">
+                <text>{{index + 1}}</text>
+              </view>
+              <view class="detail">
+                <view class="detail_item name">
+                  <text>{{item.medicinalName}}</text>
+                </view>
+                <view class="detail_item usage">
+                  <label>药品价格:</label>
+                  <text>￥{{item.medicinalPrice}}</text>
+                </view>
+                <view class="detail_item usage">
+                  <label>销售价格:</label>
+                  <text>￥{{item.medicinalSalesPrice}}</text>
+                </view>
+                <view class="detail_item usage">
+                  <label>库存数量:</label>
+                  <text>{{item.medicinalStockQuatity}}</text>
+                </view>
+                <!-- <view class="detail_item usage">
+                  <label>用法用量:</label>
+                  <text>{{item.usage}}</text>
+                </view> -->
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="none_data">暂无药品</view>
+      </block>
+      <view class="btn-view"><view class='btn' bindtap="ok">确定</view></view>
+    </view>
+</view>
+<view class="order_box">
+  <view class="order" bindtap="orderDetail">
+    <image class="order_icon" src="../../images/order-icon.svg"></image>
+    <view class="order_count" wx:if="{{selectedList.length!=0}}">{{selectedList.length}}</view>
+  </view>
+</view>
+<!-- 弹出框 -->
+<mp-dialog title="药品详情" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+<form name="prescription">
+  <view class="item"><label>药品名称:</label><text>{{selectedPerscription.medicinalName}}</text></view>
+  <view class="item">
+    <label>药品数量:</label>
+    <view class="stepper">  
+      <!-- 加号 -->  
+      <image src="../../images/add-icon.svg" class="operator add" bindtap="bindPlus" />
+      <!-- 数值 -->  
+      <text class="number">{{selectedNum}}</text>
+      <!-- 减号 -->  
+      <image src="../../images/reduce-icon.svg" class="operator reduce" bindtap="bindMinus" />
+    </view> 
+  </view>
+  <view class="item"><label>用法用量:</label><input placeholder="用法用量" bindinput="bingUsageInput" value="{{selectedUsage}}"/></view>
+  <view class="item" style="font-size: 75%;">（用法用量可修改）</view>
+</form>
+</mp-dialog>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<mp-dialog title="提示" show="{{msgDialogShow}}" bindbuttontap="msgDialogButton" buttons="{{msgButtons}}">
+  <text class="msg">{{msgText}}</text>
+</mp-dialog>

@@ -1,0 +1,46 @@
+/* pages/diagnosis/patientDetail.wxss */
+page{
+  font-size: 30rpx;
+}
+.header{
+  display: flex;
+  align-items: center;
+  height: 160rpx;
+}
+label{
+  color: #777;
+}
+text{
+  color: #444;
+}
+.header .userinfo-avatar{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.header .header_detail{
+  line-height: 60rpx;
+}
+.header .header_detail label{
+  display: inline-block;
+  width: 160rpx;
+}
+.body{
+  width: 700rpx;
+  margin: auto;
+  padding: 10rpx 20rpx;
+}
+.body label{
+  display: inline-block;
+  width: 160rpx;
+}
+.imgs{
+  padding: 10rpx 36rpx;
+}
+.imgs .img{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: .2rem;
+  margin: 8rpx;
+}
